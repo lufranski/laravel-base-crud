@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\Saint;
+
 class SaintSeeder extends Seeder
 {
     /**
@@ -15,5 +17,7 @@ class SaintSeeder extends Seeder
     public function run()
     {
         //
+
+        Saint::factory() -> count(50) -> create();
     }
 }

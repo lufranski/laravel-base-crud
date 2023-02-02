@@ -18,6 +18,10 @@ class SaintFactory extends Factory
     {
         return [
             //
+            'name' => fake() -> firstName(),
+            'birth_place' => fake() -> city(),
+            'sainthood_date' => fake() -> dateTimeAD(),
+            'miracles' => fake() -> numberBetween(1, 50)
         ];
     }
 }
