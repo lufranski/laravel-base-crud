@@ -1,8 +1,21 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    <h1> USaints: </h1>
-    <div>
+    <div id="contit">
+
+        <h1 id="tit">
+            <span id="blue">
+                U    
+            </span>
+    
+            <span id="white">
+                S   
+            </span>
+            Aints 
+        </h1>
+    </div>
+    
+    <div id="data">
 
         <ul>
             @foreach ($saints as $saint)

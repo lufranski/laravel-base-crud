@@ -1,10 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 
-div {
+body {
+    background-color: black;
+}
+
+#data {
     margin: 0 auto;
     width: 500px;
     height: 500px;
     overflow-y: auto;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 1rem;
 }
 
 a {
@@ -13,6 +20,28 @@ a {
 }
 
 .bio {
-    margin: 50px auto;
+    margin: 200px auto;
     width: 700px;
+    height: fit-content;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+#contit {
+    width: 30%;
+    margin: 20px auto;
+
+    #tit {
+        color: red;
+        font-size: 50px;
+    
+        #blue {
+            color: blue;
+        }
+    
+        #white {
+            color: white;
+        }
+    }
 }
