@@ -15,13 +15,20 @@
         </h1>
     </div>
     
+    <div id="conew">
+
+        <a id="new" href="{{ route('saint.create') }}">
+            CREATE NEW SAINT
+        </a>
+    </div>
+
     <div id="data">
 
         <ul>
             @foreach ($saints as $saint)
                 
                 <li class="d-flex">
-                    <a href="/saint/{{ $saint -> id }}">
+                    <a href="{{ route('saint.show' , ['id' => $saint -> id]) }}">
 
                         <h4>
         

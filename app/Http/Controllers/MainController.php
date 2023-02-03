@@ -12,7 +12,7 @@ class MainController extends Controller
     // HOME
     public function home(){
 
-        $saints = Saint::orderBy('name') -> get();
+        $saints = Saint::orderBy('created_at', 'DESC') -> get();
 
         $data = [
 
@@ -22,6 +22,7 @@ class MainController extends Controller
         return view('pages.home', $data);
     }
 
+    // SHOW
     public function show($id){
 
         $saint = Saint::find($id);
@@ -43,4 +44,27 @@ class MainController extends Controller
 
         return redirect() -> route('home');
     }
+
+    // CREATE
+    public function create(){
+
+        return view('pages.create');
+    }
+
+    // STORE
+    public function store(Request $request){
+
+        $data = $request -> all();
+
+        $saint = new Saint();
+        $saint -> name = $data['name'];
+        $saint -> birth_place = $data['birth_place'];
+        $saint -> sainthood_date = $data['sainthood_date'];
+        $saint -> miracles = $data['miracles'];
+
+        $saint -> save();
+
+        return redirect() -> route('home');
+    }
+
 }

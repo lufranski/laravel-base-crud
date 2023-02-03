@@ -17,7 +17,14 @@ use App\Http\Controllers\MainController;
 // HOME
 Route::get('/', [MainController::class , 'home']) -> name('home');
 
-Route::get('/saint/{id}' , [MainController::class , 'show']);
+// SHOW
+Route::get('/saint/show/{id}' , [MainController::class , 'show']) -> name('saint.show');
 
 // DESTROY
-Route::get('/saint/{id}/destroy' , [MainController::class, 'destroy']) -> name('saint.destroy');
+Route::get('/saint/destroy/{id}' , [MainController::class, 'destroy']) -> name('saint.destroy');
+
+// CREATE
+Route::get('/saint/create' , [MainController::class, 'create']) -> name('saint.create');
+
+// STORE
+Route::post('/saint/store' , [MainController::class, 'store']) -> name('saint.store');
