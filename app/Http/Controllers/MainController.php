@@ -8,6 +8,8 @@ use App\Models\Saint;
 
 class MainController extends Controller
 {
+    
+    // HOME
     public function home(){
 
         $saints = Saint::orderBy('name') -> get();
@@ -30,5 +32,15 @@ class MainController extends Controller
         ];
 
         return view('pages.saint', $data);
+    }
+
+    // DESTROY
+    public function destroy($id){
+
+        $saint = Saint::find($id);
+
+        $saint -> delete();
+
+        return redirect() -> route('home');
     }
 }

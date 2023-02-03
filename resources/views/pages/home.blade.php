@@ -20,7 +20,7 @@
         <ul>
             @foreach ($saints as $saint)
                 
-                <li>
+                <li class="d-flex">
                     <a href="/saint/{{ $saint -> id }}">
 
                         <h4>
@@ -31,6 +31,10 @@
         
                             known Miracles: {{$saint -> miracles}}
                         </h6>
+                    </a>
+
+                    <a class="h5" href="{{ route('saint.destroy' , ['id' => $saint -> id]) }}">
+                        X
                     </a>
                 </li>
             @endforeach
